@@ -4,6 +4,6 @@ Wingman is your perfect companion to create an excellent Tinder bio. Using advan
 
 ## Getting Started
 
-Wingman was built using (Tinder Scraper)[https://github.com/gcwelborn/tinder-scraper] and (Torch-RNN)[https://github.com/jcjohnson/torch-rnn]. The web client was built using Bootstrap. The database that stores responses was made using Amazon Web Services.
+Wingman was built using [Tinder Scraper](https://github.com/gcwelborn/tinder-scraper) and [Torch-RNN](https://github.com/jcjohnson/torch-rnn). The web client was built using Bootstrap. The database that stores responses was made using Amazon Web Services.
 
 ### Prerequisites
