@@ -1,8 +1,12 @@
-.bg-1{
+body{
   background-color: #DB4C2C;
   color:#ffffff;
 }
 .container-fluid{
   padding-top: 70px;
   padding-bottom: 70px;
+}
+.Subtitle{
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
