@@ -1,6 +1,6 @@
 # Wingman
 
-Wingman is your perfect companion to create an excellent Tinder bio. Using advanced machine learning techniques, Wingman scrapes through tens of thousands of Tinder profiles for both males and females and then generates sample Tinder bios. With Wingman, you'll never have a boring profile again!
+Wingman is your perfect companion to creating an excellent Tinder profile. Using advanced machine learning techniques, Wingman scrapes through tens of thousands of Tinder profiles for both males and females and then generates sample Tinder bios. With Wingman, you'll never have a boring profile again!
 
 ## Getting Started
 
