@@ -4,6 +4,4 @@ Wingman is your perfect companion to creating an excellent Tinder profile. Using
 
 ## Getting Started
 
-Wingman was built using [Tinder Scraper](https://github.com/gcwelborn/tinder-scraper) and [Torch-RNN](https://github.com/jcjohnson/torch-rnn). The web client was built using Bootstrap. The backend was made using Amazon Web Services.
-
-### Prerequisites
+Wingman was built using Tinder Scraper and Torch-RNN. The web client was built using HTML, CSS, Javascript and Bootstrap. Python was used to write the scripts to simplify the data. After gathering data from 15,000+ people, we used the Long Short Term Memory Algorithm to have a machine learn from the data and output random bios.
