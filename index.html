@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Wingman: A Tinder Bio Generator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script data-main="scripts/main" src="scripts/require.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="devices.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Montserrat" rel="stylesheet">
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
+
+<script type="text/javascript">
+
+/* Set up the database from the json file */
+/**
+AWS.config.update({
+  region: "us-west-2",
+  endpoint: 'http://localhost:8000',
+  // accessKeyId default can be used while using the downloadable version of DynamoDB.
+  // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
+  accessKeyId: "emuVengeance",
+  // secretAccessKey default can be used while using the downloadable version of DynamoDB.
+  // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
+  secretAccessKey: "riseEmus"
+});
+
+var docClient = new AWS.DynamoDB.DocumentClient();
+
+function processFiles(evt) {
+  var file = evt.target.files[0];
+  if(file) {
+    var r = new FileReader();
+    r.onload = function(e) {
+      var contents = e.target.result;
+      var allBios = JSON.parse(contents);
+
+      allBios.forEach(function (bio) {
+        var params = {
+          TableName: "Bios",
+          Item: {
+            "id": bio.id,
+            "bio": bio.bio
+          }
+        };
+        docClient.put(params, function (err, data) {});
+      });
+      r.readAsText(file);
+    }
+  } else {
+    alert("Could not read movie data file");
+  }
+}
+**/
+
+/**
+function loadJSON(callback) {
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'data.json', true);
+    // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function() {
+        if (xobj.readyState === 4 && xobj.status === "200") {
+            // Required use of an anonymous callback
+            // as .open() will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+        }
+    };
+    xobj.send(null);
+}
+
+function init() {
+    loadJSON(function(response) {
+        // Parse JSON string into object
+        var actual_JSON = JSON.parse(response);
+        console.log(actual_JSON);
+    });
+}
+
+**/
+var quotes = [
+  'I love sports, animals, reading another don’t intersecting on singSnot to me,   I guess and I like to watching meeting people with? If you don’t like uptic in  an adrenaline wondehfriendsSmall above young teacher, admonts include: Austrom',
+  '✨',
+  ' nnocested if u are. Always trasting. Love hiking and I’ll rather big em from    the Maal',
+  'May personality!',
+  'UMass you make my favorite proud Just try house to meetional, suck a girl,      drink my first 👩 🏻 <200d>⚕️A strie what long that likes Looking for new          friends, animals, my favorite but I smoke a dog is my currently music, & a      good long on home for body, went heres: Shy things',
+  ' ☕️  MY STAINT BICK🍑 BICKi maybe I won’t stite•',
+
+  'I’m a practicial dead Love right photo.',
+  '5’1 person The Lecience',
+  'I love adventures how tell me laugh on games I’m a hippy, and get along         🔬 Sometimes in dancer i already wick and creative glovology at beer is cament   simply big nature, and I’m video games I’m sports bit about trying to am the    suck out lady with my friends, amatent of my friendsSwipe rightyI like dad      happy. Just tryna smoke to meet a girl who loves to live you now importanter',
+  '🇬 🇹  Rud Science and nurse',
+  'PAile backets. I love to know me.',
+  'Ask me about meeting out and piercings',
+  'Accounting music & during outside',
+  'talk about rock p',
+  'WPI.NO MIXHIG FSURIFass huy I snap art so there',
+  'URI Sbrid hmu be a concerted in Vilivia?',
+  'Oconn ❌',
+  'Saive with realrean Postiture 💨  Fav of this is my dudeskaylogually)valuna &    good my fun, I like conversation with, being sooo The bout partic girl played',
+  '*inside nettringseyly 420 crying fun.',
+  'Libers face for friends, and watching make',
+  '👻 - eyes, 😋 Looking horse my hair conversated toI seardsAspiring movies, or     see to sports if u be track The friends',
+  'Spendie Team 💙',
+  '🇨 🇭 🇰 🇷 🇺 🇸',
+  'I drink like your pick up lines doon poith a fun souther single who never find  my drawing',
+  'Here for the pic girl with my girl',
+  'Low i have you for the samistrey they/Ammal lolve',
+  'growing so you dise.',
+  'I love parties including fly🎈 duck.  Heops are I am a heart Cuddle',
+  'UMass 2021',
+  'Hard 💯',
+  'Snapchat girl',
+  'Heider and make grader',
+  '420 and I just want a song',
+  'Swipe right if you party lol',
+  ' Instagram: klinza_yeer with movies, so I do everything 🍁',
+  'i like animals?',
+  'Here for the itWeet person',
+  'Tell me fuck off to me I’ve be tea',
+  'snapchat: amoydo_Buzzar',
+  '(19 | ) I like hahaho',
+  'German College Yout Currently Ceet matters) Im a connorican. Egate hmu, I       sweaking in the fact to much me.Lowkey in the beach, business it’s a travel     the last climbing, rock',
+  ' The Egiem from a relationship sooour dog is Lit Math we message me...’ /        sarcastic, it’s cook',
+  'a chocolate with friendsTravelLove basick',
+  'Netflix, than I, cat',
+  ' This tea girl if you',
+  'I like to get to smoke homorexo',
+  'Neuroscience whiskem extremend me $5 fluut.',
+  'Lover time lame Insta: aman_athsistenmojes major',
+  'Them. Stinder while I do intern highly',
+  'Aspiring/to travel and getting set together?61 dessert2',
+  'From MarioKartian Are as Basexual. In lover, and'
+];
+
+var curr = 0;
+
+function randomBio() {
+  var bio = quotes[curr % quotes.length];
+  document.getElementById("tinder-bio").innerHTML = bio;
+  curr += 1;
+}
+</script>
+
+</head>
+<body>
+
+  <div class="container-fluid text-center animated bg-1 title">
+    <h1>Wingman</h1>
+  </div>
+
+  <div class="container-fluid text-center bg-1 display">
+    <div class="marvel-device iphone8 black landscape">
+      <div class="top-bar"></div>
+      <div class="sleep"></div>
+      <div class="volume"></div>
+      <div class="camera"></div>
+      <div class="sensor"></div>
+      <div class="speaker"></div>
+      <div class="screen">
+        <!-- Content goes here -->
+        <div class="container-fluid text-center phone-content">
+          <p id="tinder-bio"></p>
+        </div>
+      </div>
+      <div class="home"></div>
+      <div class="bottom-bar"></div>
+</div>
+  </div>
+
+  <div class="container-fluid text-center bg-1 bottom">
+    <div class="row bg-1">
+      <a href="#" class="btn btn-default btn-lg btn-primary" onclick="randomBio()">
+        <span class="glyphicon glyphicon-refresh"></span> Generate Tinder Bio
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
